@@ -479,7 +479,7 @@ impl GetResult {
         match self {
             #[cfg(not(target_arch = "wasm32"))]
             Self::File(file, path) => {
-                const CHUNK_SIZE: usize = 8 * 1024 * 1024;
+                const CHUNK_SIZE: usize = 8 * 1024;
 
                 futures::stream::try_unfold(
                     (file, path, false),
